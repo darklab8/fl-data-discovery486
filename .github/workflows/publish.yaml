@@ -42,9 +42,9 @@ jobs:
         site-root: /fl-data-discovery486/
         freelancer-folder: ${{ github.workspace }}/freelancer_folder
         heading: <a href="https://github.com/darklab8/fl-darkstat">Darkstat</a> from <a href="https://darklab8.github.io/blog/pet_projects.html#Freelancercommunity">DarkTools</a> for <a href="https://github.com/darklab8/fl-data-discovery486">Disco486</a>
-        command: --stat-deals-on --map-padding=1.5 --map-on build
-        # map-index-url: map.html
-        # map-on: "true"
+        command: --stat-deals-on build
+        map-index-url: map.html
+        map-on: "true"
         disable-dev-mode: "false"
     - name: Upload artifacts for deployment to Github Pages
       uses: actions/upload-pages-artifact@v3
