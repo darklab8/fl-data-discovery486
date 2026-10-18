@@ -3,8 +3,7 @@
 This repository shows how to use project [fl-darkstat](https://github.com/darklab8/fl-darkstat) (Online flstat)
 for automated build of static assets and deployment to github pages
 
-The example is shown on game data from [Freelancer Discovery](https://discoverygc.com/).
-Same data is used for unit testing of [fl-darkstat](https://github.com/darklab8/fl-darkstat), [fl-configs](https://github.com/darklab8/fl-configs) and [fl-darklint](https://github.com/darklab8/fl-darklint)
+this repository deploys Ancient Freelancer Discovery 4.86 version downloaded from https://www.moddb.com/mods/discovery-freelancer/downloads/discovery-freelancer-486-exiles
 
 # More info
 

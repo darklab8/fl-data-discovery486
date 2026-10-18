@@ -26,39 +26,26 @@ jobs:
     steps:
     - name: Check out source repository
       uses: actions/checkout@v4
-    - name: Download lock file
-      run: wget https://disco-api.dd84ai.com/patchlist.xml
-    - name: Cache Freelancer
-      uses: actions/cache@v3
-      with:
-        key: ${{ runner.os }}-freelancer-discovery-${{ hashFiles('patchlist.xml') }}
-        path: ${{ github.workspace }}/freelancer_folder
-      id: cache-freelancer
     - name: Checkout Freelancer
       if: ${{ steps.cache-freelancer.outputs.cache-hit != 'true' }}
       uses: darklab8/fl-darkstat/.github/actions/checkout-freelancer@master
       with:
-        freelancer-mod: discovery
+        freelancer-mod: discovery486
         freelancer-folder: ${{ github.workspace }}/freelancer_folder
 
     - name: Install Go
       uses: darklab8/infra/.github/actions/install-go@master
-    - name: Patch freelancer discovery to latest
-      uses: darklab8/fl-darkstat/.github/actions/patch-disco@master
-      with:
-        freelancer-folder: ${{ github.workspace }}/freelancer_folder
     - name: Darkstat Build
       uses: darklab8/fl-darkstat/.github/actions/build@master
       with:
         site-host: https://darkstat.dd84ai.com
-        site-root: /fl-data-discovery/
+        site-root: /fl-data-discovery486/
         freelancer-folder: ${{ github.workspace }}/freelancer_folder
-        heading: <a href="https://github.com/darklab8/fl-darkstat">Darkstat</a> from <a href="https://darklab8.github.io/blog/pet_projects.html#Freelancercommunity">DarkTools</a> for <a href="https://github.com/darklab8/fl-data-discovery">Disco</a>
-        relay-host: https://darkstat.dd84ai.com
-        command: map build
+        heading: <a href="https://github.com/darklab8/fl-darkstat">Darkstat</a> from <a href="https://darklab8.github.io/blog/pet_projects.html#Freelancercommunity">DarkTools</a> for <a href="https://github.com/darklab8/fl-data-discovery486">Disco486</a>
+        command: --stat-deals-on build
         map-index-url: map.html
-        disable-dev-mode: "true"
-    - run: cp build_defaults/* build/
+        map-on: "true"
+        disable-dev-mode: "false"
     - name: Upload artifacts for deployment to Github Pages
       uses: actions/upload-pages-artifact@v3
       with:
