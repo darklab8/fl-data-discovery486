@@ -45,6 +45,7 @@ jobs:
         command: --stat-deals-on build
         map-index-url: map.html
         map-on: "true"
+        map-args: --map-padding=1.5
         disable-dev-mode: "false"
     - name: Upload artifacts for deployment to Github Pages
       uses: actions/upload-pages-artifact@v3
